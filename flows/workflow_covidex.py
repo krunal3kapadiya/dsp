@@ -6,6 +6,9 @@
 # First step creates a deployment.yaml file in "flows directory" and second step applies the deployment to prefect cloud.
 # It provides the UI to view the deployment in the cloud
 
+# prefect deployment run 'main-flow/default'
+# prefect deploy 
+
 from prefect import flow, task, get_run_logger
 import subprocess
 import os
