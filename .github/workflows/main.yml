@@ -10,6 +10,9 @@ jobs:
   run-prefect-workflows:
     runs-on: ubuntu-latest
 
+    env:
+      TZ: "Asia/Kolkata"  # Set time zone to New Delhi/Kolkata (UTC+5:30)
+
     steps:
     - name: Check out repository
       uses: actions/checkout@v2
