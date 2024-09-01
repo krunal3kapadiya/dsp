@@ -27,6 +27,6 @@ def main_flow():
     
 if __name__ == "__main__":
     main_flow.serve(name="covid-ds-workflow",
-                      tags=["covid datascience workflow"],
+                      tags=["covid datascience project workflow"],
                       parameters={},
                       interval=60)
