@@ -1,4 +1,4 @@
-name: Prefect CI/CD Pipeline
+name: Prefect CI/CD Pipeline with Prefect Cloud
 
 on:
   push:
@@ -24,10 +24,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Start Prefect server in the background
-      run: nohup prefect server start &
-
-    - name: Run Prefect workflow
+    - name: Authenticate with Prefect Cloud
+      env:
+        PREFECT_API_KEY: ${{ secrets.PREFECT_API_KEY }}
       run: |
-        cd flows
-        python workflow_covidex.py
+        prefect cloud login --key $PREFECT_API_KEY
+
+    - name: Run Prefect deployment on Prefect Cloud
+      run: |
+        prefect deployment run 'main-flow/covid-ds-workflow'
