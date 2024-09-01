@@ -33,13 +33,9 @@ def main_flow():
     run_task("PearsonCorrelation.py")
     run_task("FeatureImportanceMLAlgorithms.py")
 
-# for CI/CD, since all details are mentioned in deployment.yaml file
-if __name__ == "__main__":
-    main_flow.serve()
-
 # to run locally
-""" if __name__ == "__main__":
+if __name__ == "__main__":
     main_flow.serve(name="covid-ds-workflow",
                       tags=["covid datascience project workflow"],
                       parameters={},
-                      interval=300)    """
+                      interval=300)    
