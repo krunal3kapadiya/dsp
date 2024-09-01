@@ -28,7 +28,7 @@ jobs:
       env:
         PREFECT_API_KEY: ${{ secrets.PREFECT_API_KEY }}
       run: |
-        prefect cloud login --key $PREFECT_API_KEY
+        prefect cloud login --key $PREFECT_API_KEY --workspace 'shreyas-rao/default'
 
     - name: Run Prefect deployment on Prefect Cloud
       run: |
