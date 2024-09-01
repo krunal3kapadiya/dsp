@@ -37,4 +37,4 @@ if __name__ == "__main__":
     main_flow.serve(name="covid-ds-workflow",
                       tags=["covid datascience project workflow"],
                       parameters={},
-                      interval=60)
+                      interval=180)   #change to 60 secs for local, and 180 secs for CI/CD
