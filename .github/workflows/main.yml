@@ -34,12 +34,4 @@ jobs:
         echo "Current date and time in Asia/Kolkata: $(date +'%Y-%m-%d %H:%M:%S')"
         echo "CURRENT_DATE_TIME=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
 
-    - name: Authenticate with Prefect Cloud
-      env:
-        PREFECT_API_KEY: ${{ secrets.PREFECT_API_KEY }}
-      run: |
-        prefect cloud login --key $PREFECT_API_KEY --workspace 'shreyas-rao/default'
-
-    - name: Run Prefect deployment on Prefect Cloud
-      run: |
-        prefect deployment run 'main-flow/covid-ds-workflow'
+    
