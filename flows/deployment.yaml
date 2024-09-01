@@ -1,44 +1,16 @@
-###
-### A complete description of a Prefect Deployment for flow 'main-flow'
-###
-name: Covid DS Workflow Deployment
-description: null
-version: a3fb8b657f27620e678981cb7079fe6e
-# The work queue that will handle this deployment's runs
-work_queue_name: default
-work_pool_name: null
-tags: []
-parameters: {}
-schedule: null
-schedules: []
-is_schedule_active: null
-infra_overrides: {}
-infrastructure:
-  type: process
-  env: {}
-  labels: {}
-  name: null
-  command: null
-  stream_output: true
-  working_dir: null
-  block_type_slug: process
-  _block_type_slug: process
+# deployment.yaml
 
-###
-### DO NOT EDIT BELOW THIS LINE
-###
-flow_name: main-flow
-manifest_path: null
-storage: null
-path: D:\BITS-Pilani\Work\NSP-7\CC ZG506 - API-driven Cloud Native Solutions - M.Tech
-  CC - July 2024\Code\Prefect-Covid-DataScience\flows
-entrypoint: workflow_covidex.py:main_flow
-parameter_openapi_schema:
-  title: Parameters
-  type: object
-  properties: {}
-  required: null
-  definitions: null
-timestamp: '2024-09-01T05:43:11.595581+00:00'
-triggers: []
-enforce_parameter_schema: null
+# Deployment metadata
+name: "Covid DS Workflow Deployment"
+flow_name: "main_flow"
+entrypoint: "flows/workflow_covidex.py:main_flow"
+work_queue_name: "default"
+
+# Set a schedule to run 60 seconds after deployment
+schedule:
+  interval:
+    interval: 60  # 60 seconds
+    anchor_date: "{{ now() }}"
+    
+tags:
+  - covid datascience project workflow
