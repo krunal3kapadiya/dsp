@@ -14,7 +14,7 @@ prefect cloud login [Log in with a browser]
 
 OR
 
-Run prefect locally -> prefect server start
+Run prefect locally -> ```prefect server start```
 
 ### Reference URL
 
